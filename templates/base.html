@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='fonts/lato.css')  }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')  }}">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+
+		<title>StegoTools - скрой данные</title>
+	</head>
+	<body>
+		<header>
+			<nav class="navbar">
+				<div class="navbar-brand">
+					<a href="#" class="navbar-item"><div class="semi-bold">Stego</div><div class="light">Tools</div></a>
+					<a class="navbar-burger" id="burger"><span></span><span></span><span></span></a>
+				</div>
+				<div class="navbar-menu" id="nav-links">
+					<div class="navbar-start">
+						<a class="navbar-item" href="/image">изображение</a>
+						<a class="navbar-item" href="/audio">аудио</a>
+						<a class="navbar-item" href="/hash">хэш-стего</a>
+					</div>
+					<div class="navbar-end">
+						<button class="custom-button" id="support">$ поддержать автора $</button>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<div class="wrapper">
+			{% block body %}{% endblock %}
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="{{ url_for('static', filename='js/script.js')  }}"></script>
+	</body>
+</html>

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<!---
+<h3 id="sometext" class="sometext">Hello, World!</h3>
+
+<form id="hide" method="post" enctype="multipart/form-data">
+    <label class="switch">
+        спрятать / показать
+        <input type="checkbox">
+        <span class="slider round"></span>
+    </label><br/>
+
+    <label for="file_image">Выбери файл:</label>
+    <input type="file" id="file_image" name="file_image"><br/>
+
+    <textarea id="text_to_hide" name="text_to_hide" cols="40" rows="5"></textarea><br/>
+
+    <a href="javascript:hide_to_image();" id="hide_it">Скрыть</a> 
+</form>
+---!>
+
+<form id="hide" method="post" enctype="multipart/form-data">
+	<div class="panel">
+		<div class="main"> </div>
+		<div class="left"> </div>
+		<div class="right"></div>
+		<div class="drop">
+			<label for="file_image">
+				<img id="upload_cloud" src="{{ url_for('static', filename='img/upload.svg') }}"/>
+				<img id="upload" src=""/>
+			</label>
+			<input type="file" id="file_image" name="file_image"><br/>
+		</div>
+		<div class="result_image"><image src="" id="result_image"/><div id="result_text"></div></div>
+		<div class="hide_or_show">
+			<div class="hide">спрятать</div>
+		    <label class="switch">
+				<input id="hide_or_show" type="checkbox">
+				<span class="slider round"></span>
+		    </label>
+		    <div class="show">показать</div>
+		    <br/>
+		</div>
+		<div class="password"></div>
+		<div class="result">результат</div>
+		<div class="download">
+		</div>
+		<div class="go">
+			<a href="javascript:hide_to_image();" id="hide_it"><img id="arrow" src="{{ url_for('static', filename='img/arrow.svg') }}"/></a> 
+		</div>
+	</div>
+</form>
+
+<textarea id="text_to_hide" placeholder="текст, который нужно спрятать..."></textarea>
+
+{% endblock %}
