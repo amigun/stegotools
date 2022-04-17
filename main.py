@@ -1,11 +1,9 @@
 from flask import Flask, render_template, url_for, request, jsonify
-from flask_ngrok import run_with_ngrok
 from transliterate import translit
 from stegano import lsb
 from PIL import Image
 
 app = Flask(__name__)
-run_with_ngrok(app)
 
 @app.route('/', methods=["GET", "POST"])
 @app.route('/image', methods=["GET", "POST"])
